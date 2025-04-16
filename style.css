@@ -1,0 +1,27 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  display: block;
+}
+
+#quiz-container {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  border: 2px solid #FFC0CB;
+  background: white;
+  z-index: 1000;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+button {
+  cursor: pointer;
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>113下學期程式設計期中報告</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script src="libraries/p5.min.js"></script>
+    <script src="libraries/p5.sound.min.js"></script>
+  </head>
+
+  <body>
+    <!-- 用於顯示嵌入網站的容器 -->
+    <div id="iframe-container" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80%; height: 80%; border: 2px solid #FFC0CB; background: white; z-index: 1000;">
+      <iframe id="portfolio-iframe" src="" style="width: 100%; height: 100%; border: none;"></iframe>
+      <button id="close-iframe" style="position: absolute; top: 10px; right: 10px; padding: 5px 10px; background-color: #FFC0CB; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">關閉</button>
+    </div>
+
+    <!-- 測驗券容器 -->
+    <div id="quiz-container" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80%; height: 80%; border: 2px solid #FFC0CB; background: white; z-index: 1000; overflow-y: auto; padding: 20px;">
+      <div id="quiz-content"></div>
+      <button id="submit-quiz" style="margin-top: 20px; padding: 10px 20px; background-color: #FFC0CB; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">提交測驗</button>
+      <button id="retry-quiz" style="margin-top: 20px; padding: 10px 20px; background-color: #FFC0CB; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; display: none;">重新作答</button>
+      <button id="close-quiz" style="margin-top: 20px; padding: 10px 20px; background-color: #FFC0CB; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">關閉</button>
+    </div>
+
+    <script>
+      function generateQuizHTML() {
+        return `
+          <h2>🎉 歡迎來參加淡江大學教育科技學系測驗！ 🎉</h2>
+    <p>第1題：關於淡江大學教育科技學系的主要培育目標，下列何者最為正確？</p>
+    <input type="radio" name="q1" value="A"> A. 培養機械工程設計能力的專業人才<br>
+    <input type="radio" name="q1" value="B"> B. 培養運用科技促進教學與學習的教育專業人才<br>
+    <input type="radio" name="q1" value="C"> C. 培養國際法律事務處理能力的專業人才<br>
+    <input type="radio" name="q1" value="D"> D. 培養藝術創作與美術設計的專業人才<br>
+
+    <p>第2題：教育科技學系學生最有可能學習下列哪一項內容？</p>
+    <input type="radio" name="q2" value="A"> A. 民法總則與契約法<br>
+    <input type="radio" name="q2" value="B"> B. 藝術史與美術鑑賞<br>
+    <input type="radio" name="q2" value="C"> C. 教學媒體製作與應用<br>
+    <input type="radio" name="q2" value="D"> D. 醫學影像處理技術<br>
+
+    <p>第3題：以下哪一項最符合教育科技學系畢業生的就業方向？</p>
+    <input type="radio" name="q3" value="A"> A. 醫院藥劑師<br>
+    <input type="radio" name="q3" value="B"> B. 教學設計師<br>
+    <input type="radio" name="q3" value="C"> C. 金融分析師<br>
+    <input type="radio" name="q3" value="D"> D. 飛行員<br>
+
+    <p>第4題：淡江教育科技學系在學術上與哪一領域最為相關？</p>
+    <input type="radio" name="q4" value="A"> A. 建築與土木工程<br>
+    <input type="radio" name="q4" value="B"> B. 體育與運動科學<br>
+    <input type="radio" name="q4" value="C"> C. 教育與資訊科技整合應用<br>
+    <input type="radio" name="q4" value="D"> D. 海洋生物與水產養殖<br>
+
+    <p>第5題：下列何者最有可能是教育科技學系的實作課程？</p>
+    <input type="radio" name="q5" value="A"> A. 土木結構模擬<br>
+    <input type="radio" name="q5" value="B"> B. 虛擬實境教學設計<br>
+    <input type="radio" name="q5" value="C"> C. 生物基因研究實驗<br>
+    <input type="radio" name="q5" value="D"> D. 刑法與犯罪心理分析<br>
+          <button id="submit-quiz">提交答案</button>
+        `;
+      }
+    </script>
+    <script src="sketch.js"></script>
+  </body>
+</html>
